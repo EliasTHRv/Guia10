@@ -32,7 +32,7 @@ public class PerroServicio {
             String razaPerro = leer.next();
             listasPerros.add(new Perro(razaPerro));
 
-            System.out.println("Quiere cargar otro perro? N/ para salir");
+            System.out.println("Quiere cargar otro perro? S/ para salir");
             salir = leer.next();
         } while (!salir.equalsIgnoreCase("S"));
         mostrarPerros();
