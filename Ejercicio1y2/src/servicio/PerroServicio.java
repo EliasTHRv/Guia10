@@ -34,9 +34,9 @@ public class PerroServicio {
             String razaPerro = leer.next();
             listasPerros.add(new Perro(razaPerro));
 
-            System.out.println("Quiere cargar otro perro? S/ para salir");
+            System.out.println("Quiere cargar otro perro? S/N");
             salir = leer.next();
-        } while (!salir.equalsIgnoreCase("S"));
+        } while (salir.equalsIgnoreCase("s"));
 
     }
 
@@ -44,7 +44,7 @@ public class PerroServicio {
 
         for (Perro listasPerro : listasPerros)
         {
-            System.out.println("La raza es: "+listasPerro.toString());
+            System.out.println("La raza es: " + listasPerro.toString());
 
         }
     }
@@ -76,16 +76,14 @@ public class PerroServicio {
             System.out.println("La raza no se encontro dentro de la lista: ");
 
         }
-        
+
     }
-    
-        public void ordenarRazas(){
-          
-        Collections.sort(listasPerros,(Perro objeto1, Perro objeto2)-> objeto1.getRaza().compareTo(objeto2.getRaza()));
-        
-            
-                System.out.println(listasPerros.toString());
-            
-        
-        }
+
+    public void ordenarRazas() {
+//        Collections.sort(listasPerros);
+        Collections.sort(listasPerros, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
+
+        System.out.println(listasPerros.toString());
+
+    }
 }

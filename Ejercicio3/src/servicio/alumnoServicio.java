@@ -16,27 +16,32 @@ public class alumnoServicio {
 
     private ArrayList<Alumno> clase;
     private Scanner leer;
+    private Alumno alum;
 
     public alumnoServicio() {
         this.leer = new Scanner(System.in).useDelimiter("\n");
         this.clase = new ArrayList<>();
+
     }
 
     public void crearClase() {
         String confirmacion = "";
         String nombreAlumno = "";
-        System.out.println("Ingrese la cantidad de los alumnos: ");
+        System.out.println("Ingrese la cantidad de notas de los alumnos: ");
         int cantNotas = leer.nextInt();
         do
         {
             System.out.println("Ingrese el nombre: ");
             nombreAlumno = leer.next();
+//            alum.setNombre(leer.next());
             System.out.println("Ingrese las notas del alumno: ");
             ArrayList<Integer> notasAlumnos = new ArrayList<>();
             for (int i = 0; i < cantNotas; i++)
             {
                 notasAlumnos.add(leer.nextInt());
             }
+//            alum.setNotas(notasAlumnos);
+//            clase.add(alum);
             clase.add(new Alumno(nombreAlumno, notasAlumnos));
             System.out.println("Desea cargar otro alumno;  S/N");
             confirmacion = leer.next();
@@ -59,6 +64,14 @@ public class alumnoServicio {
         double promedioAlumno = 0;
         while (it.hasNext())
         {
+//            if (it.next().getNombre().equalsIgnoreCase(alumnoAcalcular))
+//            {
+//                for (Integer nota : it.next().getNotas())
+//                {
+//                    sumaNotas += nota;
+//                    estaAlumno = true;
+//                }
+//            }
             Alumno auxAlumno = it.next();
             if (auxAlumno.getNombre().equalsIgnoreCase(alumnoAcalcular))
             {
@@ -71,6 +84,7 @@ public class alumnoServicio {
 
             if (estaAlumno)
             {
+//                                promedioAlumno = sumaNotas / it.next().getNotas().size();
                 promedioAlumno = sumaNotas / auxAlumno.getNotas().size();
                 System.out.println("El promedio del alumno " + alumnoAcalcular + " es: " + promedioAlumno);
 
