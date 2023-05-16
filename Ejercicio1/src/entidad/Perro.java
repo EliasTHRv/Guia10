@@ -30,7 +30,7 @@ public class Perro {
 
     @Override
     public String toString() {
-        return "La raza de perro es: " + raza + "";
+        return raza ;
     }
     
     

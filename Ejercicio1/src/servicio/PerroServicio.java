@@ -2,6 +2,8 @@ package servicio;
 
 import entidad.Perro;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -35,16 +37,55 @@ public class PerroServicio {
             System.out.println("Quiere cargar otro perro? S/ para salir");
             salir = leer.next();
         } while (!salir.equalsIgnoreCase("S"));
-        mostrarPerros();
+
     }
 
-    private void mostrarPerros(){
-        
+    public void mostrarPerros() {
+
         for (Perro listasPerro : listasPerros)
         {
-                    System.out.println(listasPerro.toString());
+            System.out.println("La raza es: "+listasPerro.toString());
 
         }
     }
+
+    //Continuando el ejercicio anterior, después de mostrar los perros, al usuario se le pedirá
+//un perro y se recorrerá la lista con un Iterator, se buscará el perro en la lista. Si el perro
+//está en la lista, se eliminará el perro que ingresó el usuario y se mostrará la lista
+//ordenada. Si el perro no se encuentra en la lista, se le informará al usuario y se mostrará
+//la lista ordenada.
+    public void removerRaza() {
+        System.out.println("Ingrese la raza de perro a borrar: ");
+        String razaAborrar = leer.next();
+        boolean razaNoencontrada = true;
+        Iterator<Perro> it = listasPerros.iterator();
+
+        while (it.hasNext())
+        {
+            if (it.next().getRaza().equalsIgnoreCase(razaAborrar))
+            {
+                it.remove();
+                System.out.println("La raza se borro.");
+                razaNoencontrada = false;
+                break;
+            }
+        }
+
+        if (razaNoencontrada)
+        {
+            System.out.println("La raza no se encontro dentro de la lista: ");
+
+        }
+        
+    }
     
+        public void ordenarRazas(){
+          
+        Collections.sort(listasPerros,(Perro objeto1, Perro objeto2)-> objeto1.getRaza().compareTo(objeto2.getRaza()));
+        
+            
+                System.out.println(listasPerros.toString());
+            
+        
+        }
 }
