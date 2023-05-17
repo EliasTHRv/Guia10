@@ -21,7 +21,7 @@ public class alumnoServicio {
     public alumnoServicio() {
         this.leer = new Scanner(System.in).useDelimiter("\n");
         this.clase = new ArrayList<>();
-
+        this.alum = new Alumno();
     }
 
     public void crearClase() {
@@ -29,8 +29,10 @@ public class alumnoServicio {
         String nombreAlumno = "";
         System.out.println("Ingrese la cantidad de notas de los alumnos: ");
         int cantNotas = leer.nextInt();
+
         do
         {
+            Alumno alum1 = new Alumno();
             System.out.println("Ingrese el nombre: ");
             nombreAlumno = leer.next();
 //            alum.setNombre(leer.next());
@@ -48,7 +50,7 @@ public class alumnoServicio {
 
         } while (confirmacion.equalsIgnoreCase("s"));
 
-//        System.out.println(clase.toString());
+        System.out.println(clase.toString());
     }
 
 //Método notaFinal(): El usuario ingresa el nombre del alumno que quiere calcular su nota
