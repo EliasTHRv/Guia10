@@ -101,7 +101,7 @@ public class servicioPelicula {
 
 //Ordenar las películas por director, alfabéticamente y mostrarlo en pantalla.
     public void ordenarPelisDirector() {
-        Collections.sort(cine, Pelicula.compararDirector);
+        Collections.sort(cine, Pelicula.compararDirector1);
         System.out.println("Las peliculas ordenada alfabeticamente por su director: ");
         for (Pelicula pelicula : cine)
         {
