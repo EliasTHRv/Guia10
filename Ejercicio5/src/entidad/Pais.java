@@ -1,6 +1,9 @@
 package entidad;
 
+//import java.util.Comparator;
+
 import java.util.Comparator;
+
 
 /**
  *
@@ -30,13 +33,18 @@ public class Pais {
         return   nombrePais;
     }
     
-    
-    
-    public static Comparator<Pais> comparadorPaises = new Comparator<Pais>() {
+    public static Comparator<Pais> comparadorNombresPais = new Comparator<Pais>() {
         @Override
         public int compare(Pais o1, Pais o2) {
-      return o1.getNombrePais().compareTo(o2.getNombrePais());
+          return o1.getNombrePais().compareTo(o2.getNombrePais());
         }
     };
     
+//    public static Comparator<Pais> comparadorPaises = new Comparator<Pais>() {
+//        @Override
+//        public int compare(Pais o1, Pais o2) {
+//      return o1.getNombrePais().compareTo(o2.getNombrePais());
+//        }
+//    };
+//    
 }

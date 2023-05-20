@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class paisServicio {
 
-    private HashSet<Pais> paises;
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    private HashSet<Pais> paises;
     private Pais pais1;
 
     public paisServicio() {
@@ -42,8 +42,7 @@ public class paisServicio {
         //porque el hash set se identifica con un numero.
 
         ArrayList<Pais> auxPaises = new ArrayList<>(paises);
-
-        Collections.sort(auxPaises, Pais.comparadorPaises);
+        Collections.sort(auxPaises, Pais.comparadorNombresPais);
         System.out.println("Lista de paises ordenados: ");
         for (Pais auxPaise : auxPaises)
         {
@@ -64,7 +63,7 @@ public class paisServicio {
             if (it.next().getNombrePais().equalsIgnoreCase(buscarPais))
             {
                 it.remove();
-                System.out.println("El pais se elimino correctamente de la lista." ); 
+                System.out.println("El pais se elimino correctamente de la lista.");
                 estaPais = false;
                 break;
             }
@@ -75,6 +74,4 @@ public class paisServicio {
         }
     }
 
-    
-    
 }
