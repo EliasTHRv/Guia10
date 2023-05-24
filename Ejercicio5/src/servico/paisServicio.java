@@ -33,7 +33,9 @@ public class paisServicio {
 
             System.out.println("Desea cargar otro pais? S/N");
             confirmacion = leer.next();
-        } while (confirmacion.equalsIgnoreCase("S"));
+        } while (confirmacion.equalsIgnoreCase("s"));
+
+    
     }
 
     //Metodo que los ordena alfabeticamente a los paises.
